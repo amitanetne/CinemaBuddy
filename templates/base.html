@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}CinemaBuddy{% endblock %}</title>
+    <style>
+        body.light {
+            background-color: #f4f4f4;
+            color: #111;
+        }
+        body.dark {
+            background-color: #1e1e2f;
+            color: #f9f9f9;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            background: #444;
+            padding: 10px 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="{{ session.get('theme', 'light') }}">
+    <nav class="nav">
+        <div>
+            {% if session.get('username') %}
+                <a href="{{ url_for('welcome') }}">Home</a>
+                <a href="{{ url_for('predict') }}">Predict</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            {% endif %}
+        </div>
+        <div>
+            <a href="{{ url_for('toggle_theme') }}">Toggle Theme</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

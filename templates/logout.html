@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Logged Out{% endblock %}
+
+{% block content %}
+<style>
+  /* Make sure html and body take full height */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  /* Center the card vertically and horizontally */
+  .full-screen-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: #f5f5f5; /* light background, optional */
+  }
+  .card {
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff; /* Bootstrap blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<div class="full-screen-center">
+  <div class="card" style="text-align: center;">
+      <h2>You have been logged out.</h2>
+      <p>Thank you for using CinemaBuddy!</p>
+      <a href="{{ url_for('login') }}" class="btn">Login Again</a>
+  </div>
+</div>
+{% endblock %}

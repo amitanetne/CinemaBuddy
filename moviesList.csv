@@ -1,0 +1,51 @@
+Movie_Title,Year,Director,Actors,Rating,Runtime(Mins),Censor,Total_Gross,main_genre,side_genre
+Kantara,2022,Rishab Shetty,"Rishab Shetty, Sapthami Gowda, Kishore Kumar G., Achyuth Kumar",9.3,148,UA,Gross Unkown,Action," Adventure,  Drama"
+The Dark Knight,2008,Christopher Nolan,"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",9.0,152,UA,$534.86M,Action," Crime,  Drama"
+The Lord of the Rings: The Return of the King,2003,Peter Jackson,"Elijah Wood, Viggo Mortensen, Ian McKellen, Orlando Bloom",9.0,201,U,$377.85M,Action," Adventure,  Drama"
+Inception,2010,Christopher Nolan,"Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Ken Watanabe",8.8,148,UA,$292.58M,Action," Adventure,  Sci-Fi"
+The Lord of the Rings: The Two Towers,2002,Peter Jackson,"Elijah Wood, Ian McKellen, Viggo Mortensen, Orlando Bloom",8.8,179,UA,$342.55M,Action," Adventure,  Drama"
+The Lord of the Rings: The Fellowship of the Ring,2001,Peter Jackson,"Elijah Wood, Ian McKellen, Orlando Bloom, Sean Bean",8.8,178,U,$315.54M,Action," Adventure,  Drama"
+The Matrix,1999,"Directors:Lana Wachowski, Lilly Wachowski","Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving",8.7,136,A,$171.48M,Action, Sci-Fi
+The Empire Strikes Back,1980,Irvin Kershner,"Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams",8.7,124,UA,$290.48M,Action," Adventure,  Fantasy"
+Terminator 2: Judgment Day,1991,James Cameron,"Arnold Schwarzenegger, Linda Hamilton, Edward Furlong, Robert Patrick",8.6,137,A,$204.84M,Action, Sci-Fi
+Star Wars,1977,George Lucas,"Mark Hamill, Harrison Ford, Carrie Fisher, Alec Guinness",8.6,121,U,$322.74M,Action," Adventure,  Fantasy"
+Seppuku,1962,Masaki Kobayashi,"Tatsuya Nakadai, Akira Ishihama, Shima Iwashita, Tetsurô Tanba",8.6,133,Not Rated,Gross Unkown,Action," Drama,  Mystery"
+Shichinin no samurai,1954,Akira Kurosawa,"Toshirô Mifune, Takashi Shimura, Keiko Tsushima, Yukiko Shimazaki",8.6,207,U,$0.27M,Action, Drama
+Kaithi,2019,Lokesh Kanagaraj,"Karthi, Narain, Arjun Das, George Maryan",8.5,145,UA,Gross Unkown,Action," Adventure,  Crime"
+Asuran,2019,Vetrimaaran,"Dhanush, Manju Warrier, Prakash Raj, Pasupathy",8.5,141,UA,Gross Unkown,Action, Drama
+Sita Ramam,2022,Hanu Raghavapudi,"Dulquer Salmaan, Mrunal Thakur, Rashmika Mandanna, Sumanth",8.5,163,U,Gross Unkown,Action," Drama,  Mystery"
+Gladiator,2000,Ridley Scott,"Russell Crowe, Joaquin Phoenix, Connie Nielsen, Oliver Reed",8.5,155,UA,$187.71M,Action," Adventure,  Drama"
+Léon,1994,Luc Besson,"Jean Reno, Gary Oldman, Natalie Portman, Danny Aiello",8.5,110,A,$19.50M,Action," Crime,  Drama"
+Vikram,2022,Lokesh Kanagaraj,"Kamal Haasan, Vijay Sethupathi, Fahadh Faasil, Narain",8.4,175,UA,Gross Unkown,Action, Thriller
+Spider-Man: Into the Spider-Verse,2018,"Directors:Bob Persichetti, Peter Ramsey, Rodney Rothman","Shameik Moore, Jake Johnson, Hailee Steinfeld, Mahershala Ali",8.4,117,U,$190.24M,Animation," Action,  Adventure"
+Avengers: Endgame,2019,"Directors:Anthony Russo, Joe Russo","Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth",8.4,181,UA,$858.37M,Action," Adventure,  Drama"
+Avengers: Infinity War,2018,"Directors:Anthony Russo, Joe Russo","Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans",8.4,149,UA,$678.82M,Action," Adventure,  Sci-Fi"
+Top Gun: Maverick,2022,Joseph Kosinski,"Tom Cruise, Jennifer Connelly, Miles Teller, Val Kilmer",8.4,130,UA,Gross Unkown,Action, Drama
+The Dark Knight Rises,2012,Christopher Nolan,"Christian Bale, Tom Hardy, Anne Hathaway, Gary Oldman",8.4,164,UA,$448.14M,Action, Drama
+K.G.F: Chapter 2,2022,Prashanth Neel,"Yash, Sanjay Dutt, Raveena Tandon, Srinidhi Shetty",8.4,168,UA,Gross Unkown,Action," Crime,  Drama"
+Shershaah,2021,Vishnuvardhan,"Sidharth Malhotra, Kiara Advani, Shiv Panditt, Pranay Pachauri",8.4,135,UA,Gross Unkown,Action," Biography,  Drama"
+Oldeuboi,2003,Park Chan-wook,"Choi Min-sik, Yoo Ji-tae, Kang Hye-jeong, Kim Byeong-Ok",8.4,101,A,$0.71M,Action," Drama,  Mystery"
+Mononoke-hime,1997,Hayao Miyazaki,"Yôji Matsuda, Yuriko Ishida, Yûko Tanaka, Billy Crudup",8.4,134,U,$2.38M,Animation," Action,  Adventure"
+Aliens,1986,James Cameron,"Sigourney Weaver, Michael Biehn, Carrie Henn, Paul Reiser",8.4,137,U,$85.16M,Action," Adventure,  Sci-Fi"
+Raiders of the Lost Ark,1981,Steven Spielberg,"Harrison Ford, Karen Allen, Paul Freeman, John Rhys-Davies",8.4,115,A,$248.16M,Action, Adventure
+Vikram Vedha,2017,"Directors:Gayatri, Pushkar, Gowtham Selvaraj","Madhavan, Vijay Sethupathi, Shraddha Srinath, Kathir",8.3,147,UA,Gross Unkown,Action," Crime,  Drama"
+Dangal,2016,Nitesh Tiwari,"Aamir Khan, Sakshi Tanwar, Fatima Sana Shaikh, Sanya Malhotra",8.3,161,U,$12.39M,Action," Biography,  Drama"
+Spider-Man: No Way Home,2021,Jon Watts,"Tom Holland, Zendaya, Benedict Cumberbatch, Jacob Batalon",8.3,148,UA,$804.75M,Action," Adventure,  Fantasy"
+Heat,1995,Michael Mann,"Al Pacino, Robert De Niro, Val Kilmer, Jon Voight",8.3,170,A,$67.44M,Action," Crime,  Drama"
+Star Wars: Episode VI - Return of the Jedi,1983,Richard Marquand,"Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams",8.3,131,U,$309.13M,Action," Adventure,  Fantasy"
+North by Northwest,1959,Alfred Hitchcock,"Cary Grant, Eva Marie Saint, James Mason, Jessie Royce Landis",8.3,136,U,$13.28M,Action," Adventure,  Mystery"
+Major,2022,Sashi Kiran Tikka,"Adivi Sesh, Prakash Raj, Revathi, Saiee Manjrekar",8.2,150,UA,Gross Unkown,Action," Biography,  Drama"
+1917,2019,Sam Mendes,"Dean-Charles Chapman, George MacKay, Daniel Mays, Colin Firth",8.2,119,R,$159.23M,Action," Drama,  War"
+Uri: The Surgical Strike,2019,Aditya Dhar,"Vicky Kaushal, Paresh Rawal, Mohit Raina, Yami Gautam",8.2,138,UA,$4.19M,Action," Drama,  History"
+K.G.F: Chapter 1,2018,Prashanth Neel,"Yash, Srinidhi Shetty, Ramachandra Raju, Archana Jois",8.2,156,UA,Gross Unkown,Action," Crime,  Drama"
+Dag II,2016,Alper Caglar,"Caglar Ertugrul, Ufuk Bayraktar, Ahu Türkpençe, Murat Serezli",8.2,135,Not Rated,Gross Unkown,Action," Drama,  War"
+Baahubali 2: The Conclusion,2017,S.S. Rajamouli,"Prabhas, Rana Daggubati, Anushka Shetty, Tamannaah Bhatia",8.2,167,UA,$20.19M,Action, Drama
+Gangs of Wasseypur,2012,Anurag Kashyap,"Manoj Bajpayee, Ashish Chhipa, Richa Chadha, Nawazuddin Siddiqui",8.2,321,A,Gross Unkown,Action," Comedy,  Crime"
+Paan Singh Tomar,2012,Tigmanshu Dhulia,"Irrfan Khan, Mahie Gill, Rajesh Abhay, Hemendra Dandotiya",8.2,135,UA,$0.04M,Action," Biography,  Crime"
+Warrior,2011,Gavin O'Connor,"Tom Hardy, Nick Nolte, Joel Edgerton, Jennifer Morrison",8.2,140,UA,$13.66M,Action," Drama,  Sport"
+Kimetsu no Yaiba: Mugen Ressha-Hen,2020,Haruo Sotozaki,"Natsuki Hanae, Akari Kitô, Yoshitsugu Matsuoka, Hiro Shimono",8.2,117,UA,$47.70M,Animation," Action,  Adventure"
+V for Vendetta,2005,James McTeigue,"Hugo Weaving, Natalie Portman, Rupert Graves, Stephen Rea",8.2,132,UA,$70.51M,Action," Drama,  Sci-Fi"
+Batman Begins,2005,Christopher Nolan,"Christian Bale, Michael Caine, Ken Watanabe, Liam Neeson",8.2,140,UA,$206.85M,Action," Crime,  Drama"
+Kill Bill: Vol. 1,2003,Quentin Tarantino,"Uma Thurman, David Carradine, Daryl Hannah, Michael Madsen",8.2,111,A,$70.10M,Action," Crime,  Drama"
+"Lock, Stock and Two Smoking Barrels",1998,Guy Ritchie,"Jason Flemyng, Dexter Fletcher, Nick Moran, Jason Statham",8.2,107,A,$3.90M,Action," Comedy,  Crime"
+Jurassic Park,1993,Steven Spielberg,"Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough",8.2,127,UA,$402.45M,Action," Adventure,  Sci-Fi"

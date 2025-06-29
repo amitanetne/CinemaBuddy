@@ -1,0 +1,95 @@
+
+
+{% extends "base.html" %}
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Our Prediction</h2>
+    <p><strong>Estimated Rating:</strong> {{ rating|round(2) }} / 10</p>
+    <p><strong>Estimated Gross Budget:</strong> ${{ gross|round(2) }} million</p>
+    <p><strong>Estimated Success:</strong> {{ success }}</p>
+
+    {% if success == "Hit" %}
+        <p class="success-msg"> {{ username }}, your movie looks like a blockbuster!</p>
+    {% elif success == "Flop" %}
+        <p class="flop-msg"> {{ username }}, the prediction suggests it might flop. Maybe rethink the cast or genre?</p>
+    {% elif success == "Average" %}
+        <p class="average-msg"> {{ username }}, your movie has moderate potential. </p>
+    {% else %}
+        <p class="info-msg"> {{ username }}, the outcome is uncertain. Try adjusting your inputs.</p>
+    {% endif %}
+
+    <!-- Language selection and speech button -->
+    <label for="language"> Hear Prediction In:</label>
+    <select id="language">
+        <option value="en-US">English</option>
+        <option value="hi-IN">Hindi</option>
+    </select>
+    <button onclick="speakPrediction()">Speak</button>
+    <button onclick="speakPrediction()">Hear Again</button>
+    <button onclick="stopSpeaking()">Stop</button>
+
+    <br><br>
+    <a href="{{ url_for('welcome') }}" class="btn">Back to Dashboard</a>
+</div>
+
+<script>
+    let voices = [];
+
+    function loadVoices() {
+        voices = speechSynthesis.getVoices();
+    }
+
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+
+    function speakPrediction() {
+        const rating = "{{ rating|round(2) }}";
+        const gross = "{{ gross|round(2) }}";
+        const success = "{{ success }}";
+        const username = "{{ username }}";
+        const lang = document.getElementById("language").value;
+
+        const messages = {
+            "en-US": {
+                intro: `Hello ${username}. `,
+                rating: `The estimated rating is ${rating} out of 10. `,
+                gross: `The estimated gross budget is ${gross} million dollars. `,
+                Hit: "Your movie looks like a blockbuster!",
+                Flop: "The prediction suggests it might flop. Maybe rethink the cast or genre?",
+                Average: "Your movie has moderate potential.",
+                Uncertain: "The outcome is uncertain. Try adjusting your inputs."
+            },
+            "hi-IN": {
+                intro: `नमस्ते ${username}. `,
+                rating: `अनुमानित रेटिंग है ${rating} में से 10। `,
+                gross: `अनुमानित बजट है ${gross} मिलियन डॉलर। `,
+                Hit: "आपकी फिल्म एक ब्लॉकबस्टर हो सकती है!",
+                Flop: "संकेत मिलते हैं कि फिल्म फ्लॉप हो सकती है। कास्ट या शैली पर पुनर्विचार करें।",
+                Average: "आपकी फिल्म में मध्यम संभावनाएं हैं।",
+                Uncertain: "परिणाम अनिश्चित है। कृपया अपनी इनपुट बदलें।"
+            },
+            
+            
+        };
+        const m = messages[lang];
+        const outcome = m[success] || m.Uncertain;
+        const fullMessage = m.intro + m.rating + m.gross + outcome;
+
+        const utterance = new SpeechSynthesisUtterance(fullMessage);
+        utterance.lang = lang;
+
+        const voice = voices.find(v => v.lang === lang);
+        if (voice) {
+            utterance.voice = voice;
+        }
+
+        speechSynthesis.speak(utterance);
+    }
+
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+}
+</script>
+{% endblock %}
+

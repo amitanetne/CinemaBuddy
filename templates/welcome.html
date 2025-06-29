@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="card" style="text-align: center;">
+    <h1>Welcome to CinemaBuddy, {{ username }}!</h1>
+    <p>This tool helps predict movie success based on director, cast, budget, genre, and other critical factors.</p>
+
+    <div style="margin-top: 20px;">
+        <h2>What Can CinemaBuddy Do?</h2>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li> Analyze cast and crew impact on movie performance.</li>
+            <li> Estimate gross revenue potential based on budget and genre.</li>
+            <li> Use machine learning to provide success predictions.</li>
+            <li> Compare different movie scenarios.</li>
+        </ul>
+
+        <h3 style="margin-top: 30px;">Getting Started</h3>
+        <p>Click on "Start Predicting" to enter your movie details and receive a prediction.</p>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <a href="{{ url_for('predict') }}" style="padding: 10px 20px; background-color: #28a745; color: rgb(252, 247, 247); text-decoration: none; border-radius: 4px;">Start Predicting</a>
+        <a href="{{ url_for('logout') }}" style="padding: 10px 20px; background-color: #b11717; color: rgb(244, 240, 240); text-decoration: none; border-radius: 4px;">Logout</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}Predict Movie{% endblock %}
+
+{% block content %}
+<section style="text-align: center;">
+    <h2> CinemaBuddy</h2>
+    <p>Welcome, {{ username.title() }}!</p>
+
+    <!-- Voice Input Language Selector -->
+    <label for="voiceLang"> Voice Input Language:</label>
+    <select id="voiceLang">
+        <option value="en-US">English</option>
+        <option value="hi-IN">Hindi</option>
+    </select>
+
+    <form method="POST">
+        {% for label, name in [
+            (' Director', 'director'),
+            (' Actors', 'actors'),
+            (' Censor', 'censor'),
+            (' Main Genre', 'genre'),
+            (' Runtime (minutes)', 'runtime')] %}
+        <p>
+            <label>{{ label }}</label><br>
+            <input type="{{ 'number' if name == 'runtime' else 'text' }}" name="{{ name }}" id="{{ name }}" required>
+            <button type="button" onclick="startListening('{{ name }}')">🎤</button>
+        </p>
+        {% endfor %}
+
+        <p>
+            <button type="submit"> Predict</button>
+        </p>
+    </form>
+
+    {% if rating is defined and gross is defined and success is defined %}
+    <hr>
+    <h3> Prediction Results</h3>
+    <ul style="list-style: none; padding: 0;">
+        <li><strong>Rating:</strong> {{ rating|default(0)|round(2) }}/10</li>
+        <li><strong>Gross:</strong> ${{ gross|default(0)|round(2) }} million</li>
+        <li><strong>Success:</strong> {{ success }}</li>
+    </ul>
+
+    <label for="language">🔈 Hear Prediction In:</label>
+    <select id="language">
+        <option value="en-US">English</option>
+        <option value="hi-IN">Hindi</option>
+    </select>
+    <button onclick="speakPrediction()">Speak</button>
+    <button onclick="speakPrediction()">Hear Again</button>
+    <button onclick="stopSpeaking()">Stop</button>
+    {% endif %}
+</section>
+
+<script>
+let voices = [];
+function loadVoices() {
+    voices = speechSynthesis.getVoices();
+    if (!voices.length) setTimeout(loadVoices, 100);
+}
+window.speechSynthesis.onvoiceschanged = loadVoices;
+window.onload = loadVoices;
+
+// Voice Recognition Setup
+let recognition;
+if ('webkitSpeechRecognition' in window) {
+    recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onresult = function (event) {
+        const transcript = event.results[0][0].transcript.trim();
+        const field = recognition.targetField;
+        if (field) {
+            const input = document.getElementById(field);
+            if (input.type === "number") {
+                const digits = transcript.replace(/[^\d]/g, '');
+                input.value = digits || transcript;
+            } else {
+                input.value = transcript;
+            }
+        }
+    };
+
+    recognition.onerror = function () {
+        alert("Could not recognize speech. Try again.");
+    };
+}
+
+function startListening(fieldId) {
+    if (!recognition) {
+        alert("Voice recognition is not supported in this browser.");
+        return;
+    }
+
+    const langSelect = document.getElementById("voiceLang");
+    recognition.lang = langSelect.value;
+    recognition.targetField = fieldId;
+    recognition.start();
+}
+
+// Voice Output
+function speakPrediction() {
+    const rating = "{{ rating|default(0)|round(2) }}";
+    const gross = "{{ gross|default(0)|round(2) }}";
+    const success = "{{ success }}";
+    const username = "{{ username.title() }}";
+    const lang = document.getElementById("language").value;
+
+    const messages = {
+        "en-US": {
+            intro: `Hello ${username}. `,
+            rating: `The estimated rating is ${rating} out of 10. `,
+            gross: `The estimated gross is ${gross} million dollars. `,
+            Hit: "Your movie looks like a blockbuster!",
+            Flop: "The prediction suggests it might flop. Maybe rethink the cast or genre?",
+            Average: "Your movie has moderate potential.",
+            Uncertain: "The outcome is uncertain. Try adjusting your inputs."
+        },
+        "hi-IN": {
+            intro: `नमस्ते ${username}. `,
+            rating: `अनुमानित रेटिंग है ${rating} में से 10। `,
+            gross: `अनुमानित ग्रॉस है ${gross} मिलियन डॉलर। `,
+            Hit: "आपकी फिल्म एक ब्लॉकबस्टर हो सकती है!",
+            Flop: "संभावना है कि फिल्म फ्लॉप हो सकती है। कास्ट या शैली पर फिर से विचार करें।",
+            Average: "आपकी फिल्म की संभावना मध्यम है।",
+            Uncertain: "परिणाम अनिश्चित है। कृपया अपनी इनपुट बदलें।"
+        }
+    };
+
+    const m = messages[lang];
+    const outcome = m[success] || m.Uncertain;
+    const fullMessage = m.intro + m.rating + m.gross + outcome;
+
+    const utterance = new SpeechSynthesisUtterance(fullMessage);
+    utterance.lang = lang;
+
+    const voice = voices.find(v => v.lang === lang);
+    if (!voice) {
+        alert("Selected voice not available. Try English or check your browser settings.");
+        return;
+    }
+
+    utterance.voice = voice;
+    speechSynthesis.speak(utterance);
+}
+
+function stopSpeaking() {
+    speechSynthesis.cancel();
+}
+</script>
+{% endblock %}
