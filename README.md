@@ -84,14 +84,15 @@ The app uses:
 
 
 
-   Team
+   
 
-- Kanishk  
-- Aditya  
-- Rachit  
-- Renuka  
-- Anshika  
-- Amita (Team Lead)
+Team
+- Kanishk Sharma
+- Aditya Singh 
+- Rachit Kumar 
+- Renuka Swathi Tirri 
+- Anshika Mourya
+- Amita Netne (Team Lead)
 
 ---
 
